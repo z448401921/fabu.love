@@ -1,3 +1,9 @@
+/*
+ * @Author: ainuo
+ * @Date: 2020-05-29 14:37:44
+ * @LastEditTime: 2020-05-29 15:21:19
+ * @FilePath: /fabu.love/client2/src/main.js
+ */ 
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
@@ -58,8 +64,6 @@ configAxios()
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
   router,
-  components: {App},
-  template: '<App/>'
-})
+  render: h => h(App)
+}).$mount("#app")

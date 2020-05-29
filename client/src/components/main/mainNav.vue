@@ -1,46 +1,65 @@
 <template>
   <div class="mainNav-wrapper">
     <div class="mainNav-logo">
-      <img src="../../assets/logo_s.png" alt="" @click="clickLogo">
-      <div class="line"></div>
+      <img
+        src="../../assets/logo_s.png"
+        alt=""
+        @click="clickLogo"
+      >
+      <div class="line" />
     </div>
 
     <div>
       <el-menu
+        ref="elmenu"
         :default-active="activeIndex"
         class="mainNav-el-menu"
-        ref="elmenu"
       >
         <!--不可以用v-if，否则会因为控件加载时序问题导致，指定选中的item失效-->
         <div v-show="this.activeIndex !== '应用概述' && this.activeIndex !== '应用详情'">
-          <el-menu-item index="应用列表" @click="clickSubItem">
-            <i class="icon-ic_applist"></i>
+          <el-menu-item
+            index="应用列表"
+            @click="clickSubItem"
+          >
+            <i class="icon-ic_applist" />
             <span slot="title">应用列表</span>
           </el-menu-item>
           <!-- <el-menu-item index="小程序列表" @click="clickSubItem">
             <i class="icon-ic_applist"></i>
             <span slot="title">小程序列表</span>
           </el-menu-item> -->
-          <el-menu-item index="团队管理" @click="clickSubItem">
-            <i class="icon-ic_mnggp"></i>
+          <el-menu-item
+            index="团队管理"
+            @click="clickSubItem"
+          >
+            <i class="icon-ic_mnggp" />
             <span slot="title">团队管理</span>
           </el-menu-item>
         </div>
 
         <div v-show="this.activeIndex === '应用概述'">
-          <el-menu-item index="应用概述" @click="clickSubItem">
-            <i class="icon-ic_appdes"></i>
+          <el-menu-item
+            index="应用概述"
+            @click="clickSubItem"
+          >
+            <i class="icon-ic_appdes" />
             <span slot="title">应用概述</span>
           </el-menu-item>
-          <el-menu-item index="应用设置" @click="clickSubItem">
-            <i class="icon-ic_appsetting-copy"></i>
+          <el-menu-item
+            index="应用设置"
+            @click="clickSubItem"
+          >
+            <i class="icon-ic_appsetting-copy" />
             <span slot="title">应用设置</span>
           </el-menu-item>
         </div>
         <!--小程序-->
         <div v-show="this.activeIndex === '应用详情'">
-          <el-menu-item index="应用详情" @click="clickSubItem">
-            <i class="icon-ic_appdes"></i>
+          <el-menu-item
+            index="应用详情"
+            @click="clickSubItem"
+          >
+            <i class="icon-ic_appdes" />
             <span slot="title">应用详情</span>
           </el-menu-item>
         </div>
@@ -51,26 +70,38 @@
       <el-menu
         class="mainNav-footer-list"
       >
-        <el-menu-item index="API文档" @click="clickSubItem">
-          <i class="icon-ic_api_s"></i>
+        <el-menu-item
+          index="API文档"
+          @click="clickSubItem"
+        >
+          <i class="icon-ic_api_s" />
           <span slot="title">API文档</span>
         </el-menu-item>
-        <el-menu-item index="Help" @click="clickSubItem">
-          <i class="icon-ic_help_s"></i>
+        <el-menu-item
+          index="Help"
+          @click="clickSubItem"
+        >
+          <i class="icon-ic_help_s" />
           <span slot="title">Help</span>
         </el-menu-item>
-        <el-menu-item index="GitHub" @click="clickSubItem">
-          <i class="icon-ic_github_s"></i>
+        <el-menu-item
+          index="GitHub"
+          @click="clickSubItem"
+        >
+          <i class="icon-ic_github_s" />
           <span slot="title">GitHub</span>
         </el-menu-item>
-        <el-menu-item index="About" @click="clickSubItem">
-          <i class="icon-ic_about_s"></i>
+        <el-menu-item
+          index="About"
+          @click="clickSubItem"
+        >
+          <i class="icon-ic_about_s" />
           <span slot="title">About</span>
         </el-menu-item>
       </el-menu>
     </div>
 
-    <div class="rightLine"></div>
+    <div class="rightLine" />
   </div>
 </template>
 
@@ -80,6 +111,10 @@
     data() {
       return {
         activeIndex: '应用列表'
+      }
+    },
+    watch: {
+      '$route': (to) => {
       }
     },
     mounted() {
@@ -162,10 +197,6 @@
       clickLogo() {
 //        this.$router.replace('/apps')
 //        window.location.replace(window.location.href)
-      }
-    },
-    watch: {
-      '$route': (to) => {
       }
     }
   }
